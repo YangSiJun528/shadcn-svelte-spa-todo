@@ -1,2 +1,10 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script lang="ts">
+    import TodoInput from "$lib/components/TodoInput.svelte";
+    import {SimpleMapDB} from "$lib/db/SimpleMapDB.js"
+
+    let db = new SimpleMapDB();
+</script>
+
+<h1>My TODO</h1>
+<TodoInput {db}></TodoInput>
+
