@@ -16,6 +16,8 @@ SvelteKit에서 SPA로 TODO 만들기
   - https://www.figma.com/community/file/1342715840824755935
 - Next.js지만 참고할만한 구현이 많은 사이트 - Shadcn UI blocks
   - https://www.shadcn-ui-blocks.com/
+  - 근데 복붙해서 쓰려면 유료라 참고만 하기
+  - 실제 구현 시에는 마진이나 크기 규칙 정해서 AI한테 시키는게 더 효율적일듯?
 
 # 개발하며 메모
 
