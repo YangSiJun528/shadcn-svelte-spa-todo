@@ -23,7 +23,14 @@
     }
 </script>
 
-<form {onsubmit} class="flex w-full max-w-sm items-center space-x-2">
-    <Input type="text" placeholder="todo" bind:value={inputValue}/>
-    <Button type="submit">Add</Button>
-</form>
+<div class="flex justify-center mb-6">
+    <form {onsubmit} class="flex w-full max-w-md items-center space-x-2">
+        <Input
+                type="text"
+                placeholder="할 일을 입력하세요..."
+                bind:value={inputValue}
+                class="flex-1"
+        />
+        <Button type="submit" class="px-6">추가</Button>
+    </form>
+</div>
