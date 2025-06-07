@@ -1,23 +1,37 @@
+import {writable, type Writable} from "svelte/store";
+
 export class SimpleMapDB {
-    private store = new Map();
+    private _store = new Map<number, any>();
+    private _version: Writable<number> = writable(0);
 
-    // 추가/수정 (덮어씌우기)
-    set(key: string, value: any) {
-        this.store.set(key, value);
+    get version() {
+        return this._version;
     }
 
-    // 조회
-    get(key: string) {
-        return this.store.get(key);
+    set(key: number, value: any) {
+        this._store.set(key, value);
+        this.updateVersion();
     }
 
-    // 전체 조회
+    get(key: number) {
+        return this._store.get(key);
+    }
+
     getAll() {
-        return Array.from(this.store.values());
+        return Array.from(this._store.values());
     }
 
-    // 삭제
-    delete(key: string) {
-        return this.store.delete(key);
+    delete(key: number) {
+        this._store.delete(key);
+        this.updateVersion();
+    }
+
+    clear() {
+        this._store.clear();
+        this.updateVersion();
+    }
+
+    private updateVersion() {
+        this._version.update(v => v + 1);
     }
 }
