@@ -12,7 +12,7 @@
     let taskStores = derived(db.version, () => db.getAll());
 </script>
 
-<div class="w-full max-w-4xl mx-auto">
+<div class="w-full max-w-2xl mx-auto">
     <div class="rounded-lg border shadow-sm overflow-hidden">
         <Table.Root>
             <Table.Header>
