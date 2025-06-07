@@ -11,13 +11,14 @@
         event.preventDefault();
 
         if (inputValue.trim()) {
-            db.set(inputValue, {
+            const id = Date.now()
+            db.set(id, {
+                id: id,
                 title: inputValue,
                 isDone: false
             });
             inputValue = ''; // 입력창 초기화
         }
-
         console.log(db);
     }
 </script>
