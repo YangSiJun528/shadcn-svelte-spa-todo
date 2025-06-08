@@ -1,14 +1,14 @@
 import {writable, type Writable} from "svelte/store";
 
 export class SimpleMapDB {
-    private _store = new Map<number, any>();
+    private _store = new Map<number, Task>();
     private _version: Writable<number> = writable(0);
 
     get version() {
         return this._version;
     }
 
-    set(key: number, value: any) {
+    set(key: number, value: Task) {
         this._store.set(key, value);
         this.updateVersion();
     }
@@ -35,3 +35,9 @@ export class SimpleMapDB {
         this._version.update(v => v + 1);
     }
 }
+
+export type Task = {
+    id: number;
+    title: string;
+    isDone: boolean;
+};
