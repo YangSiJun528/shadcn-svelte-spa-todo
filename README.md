@@ -18,6 +18,19 @@ SvelteKit에서 SPA로 TODO 만들기
   - https://www.shadcn-ui-blocks.com/
   - 근데 복붙해서 쓰려면 유료라 참고만 하기
   - 실제 구현 시에는 마진이나 크기 규칙 정해서 AI한테 시키는게 더 효율적일듯?
+- Shadcn UI 기반 컴포넌트 무료 제공 사이트 
+  - Shadcn UI Blocks - 이름 위 꺼랑 같은데, 다른 사이트임
+    - https://www.shadcnui-blocks.com/
+  - shadcn-svelte blocks
+    - https://next.shadcn-svelte.com/blocks
+    - Shadcn UI 공식 사이트의 블록을 스벨트 버전으로 제공 (shadcn-svelte 자체는 공식 아님.)
+  - awesome-shadcn-ui
+    - https://github.com/birobirobiro/awesome-shadcn-ui
+    - shadcn-ui 관련 사이트 모아둔 깃헙 프로젝트, 라이센스 확인해야함. 
+    - 막상 shadcn-ui랑 호환 안되고, 영향받아 만들어진 도구들도 있어서 확인 필요함.
+  - file-vault 
+    - 파일 업로드 기능 지원하는 라이브러리인데, 디자인은 참고할만해서 좋음 
+    - https://github.com/ManishBisht777/file-vault
 
 # 개발하며 메모
 
