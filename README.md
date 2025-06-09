@@ -49,8 +49,17 @@ SvelteKit에서 SPA로 TODO 만들기
   - https://plugins.jetbrains.com/plugin/23479-shadcn-ui-components-manager
   - 지금 유지보수가 잘 안되는듯? `components.json` 로딩을 못함.
 
-### TODO 요구사항 구상
+### TODO 요구사항 
 
 - CRUD 필요
-- 내부 Map 사용해서 DB 흉내내기 (딜레이 추가해서 버튼 막거나 하는거 추가하기) 
+- 내부 Map 사용해서 DB 흉내내기 (딜레이 추가해서 버튼 막거나 하는거 추가하기)
+
+### 후기
+
+- db 처리하는게 별로 실용적이진 않은 듯? API 처리하는거랑 좀 느낌이 다름.
+- 뭔가 코드가 React랑 크게 다를게 없는거 같기도 하고... 
+  - NextJS도 SPA + SSG 조합이 가능한거 같은데 옮기는게 나으려나
+  - 일단 목표하는 서비스의 기능이 크지 않기도 하고, Svelte가 더 마음에 들긴 함. 기능도 잘 통합되있고 해서.
+  - 아직까진 생산성에 큰 차이 없을거라 생각해서 계속 SvelteKit 사용할듯.
+- 
 
