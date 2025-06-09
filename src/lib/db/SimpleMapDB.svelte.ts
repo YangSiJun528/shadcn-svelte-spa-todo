@@ -1,8 +1,6 @@
-import {writable, type Writable} from "svelte/store";
-
-export class SimpleMapDB {
+export class SimpleMapDBSvelte {
     private _store = new Map<number, Task>();
-    private _version: Writable<number> = writable(0); // store(전역 상태관리 공간)에 쓰기 가능한 데이터로 저장
+    private _version: number = $state(0);
 
     get version() {
         return this._version;
@@ -32,7 +30,7 @@ export class SimpleMapDB {
     }
 
     private updateVersion() {
-        this._version.update(v => v + 1);
+        this._version = this._version + 1;
     }
 }
 

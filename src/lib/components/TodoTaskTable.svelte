@@ -1,15 +1,18 @@
 <script lang="ts">
     import * as Table from "$lib/components/ui/table/index.js";
-    import type {SimpleMapDB, Task} from "$lib/db/SimpleMapDB";
-    import {derived} from "svelte/store";
+    import type {SimpleMapDBSvelte, Task} from "$lib/db/SimpleMapDB.svelte";
     import {Button} from "$lib/components/ui/button";
     import {Checkbox} from "$lib/components/ui/checkbox";
     import {Delete, Pen} from '@lucide/svelte/icons';
 
-    let {db}: { db: SimpleMapDB } = $props();
+    let {db}: { db: SimpleMapDBSvelte } = $props();
 
-    // store에 있는 db.version을 구독하여 상태가 바뀔 때마다 `db.getAll()`를 호출하고 그 결과를 taskStores에 갱신
-    let taskStores = derived(db.version, () => db.getAll());
+    // db.version이 변경될 때마다 자동으로 태스크 목록을 업데이트
+    let taskStores = $derived.by(() => {
+        // version을 명시적으로 참조하여 반응성 연결
+        db.version;
+        return db.getAll();
+    });
 
     // 편집 중인 할 일들의 ID - 배열로 관리하여 반응성 보장
     let updateToggleTaskIds: number[] = $state([]);
@@ -63,7 +66,7 @@
                 </Table.Row>
             </Table.Header>
             <Table.Body>
-                {#each $taskStores as task (task.id)}
+                {#each taskStores as task (task.id)}
                     <Table.Row class="hover:bg-muted/30 transition-colors">
                         <Table.Cell class="text-center">
                             <div class="flex justify-center">
@@ -134,7 +137,7 @@
                     {/if}
                 {/each}
 
-                {#if $taskStores.length === 0}
+                {#if taskStores.length === 0}
                     <Table.Row>
                         <Table.Cell colspan="3" class="text-center py-8 text-muted-foreground">
                             아직 할 일이 없습니다. 새로운 할 일을 추가해보세요!

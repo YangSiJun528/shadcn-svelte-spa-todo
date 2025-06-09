@@ -1,9 +1,9 @@
 <script lang="ts">
     import {Button} from "$lib/components/ui/button/index.js";
     import {Input} from "$lib/components/ui/input/index.js";
-    import type {SimpleMapDB} from "$lib/db/SimpleMapDB";
+    import type {SimpleMapDBSvelte} from "$lib/db/SimpleMapDB.svelte";
 
-    let {db}: { db: SimpleMapDB } = $props();
+    let {db}: { db: SimpleMapDBSvelte } = $props();
 
     let inputValue = $state('');
 

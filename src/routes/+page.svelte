@@ -1,9 +1,9 @@
 <script lang="ts">
     import TodoInput from "$lib/components/TodoInput.svelte";
     import TodoTaskTable from "$lib/components/TodoTaskTable.svelte";
-    import {SimpleMapDB} from "$lib/db/SimpleMapDB.js"
+    import {SimpleMapDBSvelte} from "$lib/db/SimpleMapDB.svelte"
 
-    let db = new SimpleMapDB();
+    let db = new SimpleMapDBSvelte();
 </script>
 
 <div class="container mx-auto px-4 py-8 max-w-6xl">
