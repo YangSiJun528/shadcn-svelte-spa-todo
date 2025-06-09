@@ -3,8 +3,7 @@
     import TodoTaskTable from "$lib/components/TodoTaskTable.svelte";
     import {SimpleMapDB} from "$lib/db/SimpleMapDB.js"
 
-    //DB를 반응형 상태로 정의해야 변화가 감지됨.
-    let db = $state(new SimpleMapDB())
+    let db = new SimpleMapDB();
 </script>
 
 <div class="container mx-auto px-4 py-8 max-w-6xl">
