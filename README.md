@@ -31,6 +31,10 @@ SvelteKit에서 SPA로 TODO 만들기
   - file-vault 
     - 파일 업로드 기능 지원하는 라이브러리인데, 디자인은 참고할만해서 좋음 
     - https://github.com/ManishBisht777/file-vault
+- ~~svelte에서 shadcn 스타일이랑 비슷한 토스트 메시지 라이브러리~~ - shadcn-svelte에서 기본 제공됨
+  - https://svelte-sonner.vercel.app/
+  - shadcn-svelte에서 svelte-sonner를 기본 제공하고 있었음
+    - https://www.shadcn-svelte.com/docs/components/sonner
 
 # 개발하며 메모
 
