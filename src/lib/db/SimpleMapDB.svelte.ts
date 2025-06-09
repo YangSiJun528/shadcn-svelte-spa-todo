@@ -1,4 +1,4 @@
-export class SimpleMapDBSvelte {
+export class SimpleMapDB {
     private _store = new Map<number, Task>();
     private _version: number = $state(0);
 

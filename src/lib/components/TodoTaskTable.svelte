@@ -1,11 +1,11 @@
 <script lang="ts">
     import * as Table from "$lib/components/ui/table/index.js";
-    import type {SimpleMapDBSvelte, Task} from "$lib/db/SimpleMapDB.svelte";
+    import type {SimpleMapDB, Task} from "$lib/db/SimpleMapDB.svelte";
     import {Button} from "$lib/components/ui/button";
     import {Checkbox} from "$lib/components/ui/checkbox";
     import {Delete, Pen} from '@lucide/svelte/icons';
 
-    let {db}: { db: SimpleMapDBSvelte } = $props();
+    let {db}: { db: SimpleMapDB } = $props();
 
     // db.version이 변경될 때마다 자동으로 태스크 목록을 업데이트
     let taskStores = $derived.by(() => {
