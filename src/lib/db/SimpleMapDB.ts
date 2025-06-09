@@ -2,7 +2,7 @@ import {writable, type Writable} from "svelte/store";
 
 export class SimpleMapDB {
     private _store = new Map<number, Task>();
-    private _version: Writable<number> = writable(0);
+    private _version: Writable<number> = writable(0); // store(전역 상태관리 공간)에 쓰기 가능한 데이터로 저장
 
     get version() {
         return this._version;

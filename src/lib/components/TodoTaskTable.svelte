@@ -8,7 +8,7 @@
 
     let {db}: { db: SimpleMapDB } = $props();
 
-    // DB 버전을 구독하여 반응형으로 만들기
+    // store에 있는 db.version을 구독하여 상태가 바뀔 때마다 `db.getAll()`를 호출하고 그 결과를 taskStores에 갱신
     let taskStores = derived(db.version, () => db.getAll());
 
     // 편집 중인 할 일들의 ID - 배열로 관리하여 반응성 보장
